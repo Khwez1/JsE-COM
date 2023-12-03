@@ -1,0 +1,29 @@
+/* / header / */
+#nav{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+#nav-links{
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    align-items: end;
+    align-content: end;
+    text-align: end;
+}
+.nav-link{
+    padding-left: 30px;
+}
+.nav-link:hover{
+    color: white;
+}
+#landing{
+    background-image:url(https://i.postimg.cc/rpKB9zDt/bogomil-mihaylov-ek-HSHvgr27k-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
