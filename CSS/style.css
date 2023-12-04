@@ -12,7 +12,7 @@
     text-align: end;
 }
 .nav-link{
-    padding-left: 30px;
+    padding-left: 25px;
 }
 .nav-link:hover{
     color: white;
@@ -26,4 +26,13 @@
     align-items: center;
     align-content: center;
     height: 100vh;
+}
+.welcome{
+    color: purple;
+}
+#Headline{
+    color: gold;
+}
+#description{
+    color: purple;
 }
