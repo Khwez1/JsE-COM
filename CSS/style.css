@@ -1,21 +1,52 @@
-/* / header / */
-#nav{
-    /* border: 1px solid black; */
-    width: 100%;
-}
-#nav-links{
+#product-landing{
+    background-image:url(https://i.postimg.cc/T1qbGWd3/steven-erixon-Izwvp-T7g-Gg-U-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: end;
-    flex-direction: row;
-    align-items: end;
-    align-content: end;
-    text-align: end;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
 }
-.nav-link{
-    padding-left: 25px;
+#checkout-landing{
+    background-image:url(https://i.postimg.cc/bwF344VF/priscilla-du-preez-8aj1-Pl2-Ldd-M-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
 }
-.nav-link:hover{
-    color: white;
+#contact-landing{
+    background-image:url(https://i.postimg.cc/DZ3dThr5/elizeu-dias-a-Z3qiq1e-TRk-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+#Admin-landing{
+    background-image:url(https://i.postimg.cc/2y9388td/debby-ledet-j-EYia-Gwmkdk-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+#About-landing{
+    background-image:url(https://i.postimg.cc/HW43TrPM/mohd-zuber-saifi-p-Fw-PM1-YI2-M-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
 }
 #landing{
     background-image:url(https://i.postimg.cc/rpKB9zDt/bogomil-mihaylov-ek-HSHvgr27k-unsplash.jpg);
