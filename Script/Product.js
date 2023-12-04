@@ -5,7 +5,7 @@ let forSale = document.querySelector('[data-forSale]')
 //reloading items array to display
 let items = JSON.parse(localStorage.getItem('items'))
 //displaying the items array
-forSale.innerHTML = items.map(function (item,index){
+forSale.innerHTML = items.map(function displayArray(item,index){
     return`
     <div>
         <h2>${item.name}</h2>
@@ -27,7 +27,25 @@ forSale.addEventListener('click',function (){
         add(event.target.value)
     }
 })
-
-let a = items.filter(item =>{
-    return item.name == 'Nike Shoe'; 
+//search button
+let searchBtn = document.querySelector('[data-searchBtn]')
+//search bar value 
+let searchFor = document.querySelector('[searchBar]').value
+//search button function
+searchBtn.addEventListener("click", ()=>{
+    let searchResults = JSON.parse(localStorage.getItem("items"))?.items.filter(item =>{
+    item.includes(searchFor)
+    });
+    displayArray(searchResults)
+});
+//sort button
+let sort = document.querySelector('[data-sortBtn]')
+//sort button function
+sort.addEventListener("click", ()=>{
+    let sorted = JSON.parse(localStorage.getItem("items"))?.sort((a, b) =>{
+      if(a.price < b.price ) return -1;
+      if(a.price > b.price ) return 1;
+      return 0;
+    });
+    displayArray(sorted);
 })
