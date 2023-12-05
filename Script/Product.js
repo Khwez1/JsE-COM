@@ -41,11 +41,14 @@ forSale.addEventListener('click',function (){
 //search button
 let searchBtn = document.querySelector('[data-searchBtn]')
 //search bar value 
-let searchFor = document.querySelector('[searchBar]')
+let searchFor = document.querySelector('[data-searchBar]')
 //search button function
 searchBtn.addEventListener("click", ()=>{
-    let searchResults = JSON.parse(localStorage.getItem("items"))?.items.filter(item =>{
-    if(item.includes(searchFor.value)){
+    let searchResults = items?.filter(item =>
+    item.name.includes(searchFor.value));
+    if (searchResults.length === 0) {
+        alert('No Products were found')
+    }else{
         forSale.innerHTML = searchResults.map(function displayArray(item,index){
             return`
             <div class="col-md-4 my-5 d-flex justify-content-center">
@@ -60,14 +63,11 @@ searchBtn.addEventListener("click", ()=>{
                 </div>
             </div>
             `}).join('');
-    }else{
-        alert('nothing was found')
-    };
-    });
+        }
 });
 //sort button
-//sort button function
 let sortBtn = document.querySelector('[data-sortBtn]')
+//sort button function
 sortBtn.addEventListener("click", ()=>{
      sorted = JSON.parse(localStorage.getItem("items"))?.sort((a, b) =>{
       if(a.price < b.price ) return -1;
