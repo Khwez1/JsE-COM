@@ -19,13 +19,6 @@ forSale.innerHTML = items.map(function displayArray(item,index){
         </div>
     </div>
     `
-    // <div>
-    //     <h2>${item.name}</h2>
-    //     <p>${item.description}</p>
-    //     <p><img width="200" height="200" src="${item.url}"/></p>
-    //     <p>${item.price}</p>
-    //     <button value="${index}" data-add>Add to Cart</button>
-    // </div>
 }).join('')
 
 function add(index){
