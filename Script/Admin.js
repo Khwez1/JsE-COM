@@ -24,13 +24,13 @@ function displayItemsAdmin(){
     let products = items.map(function (item, index){
         return `   
                    <tr>
-                   <td>${item.id}</td>
-                   <td>${item.name}</td>
-                   <td><img width="200" height="200" src="${item.url}"/></td>
-                   <td>R${item.price}</td>
-                   <td>${item.description}</td>
-                   <td><button class="add">Edit</button></td>
-                   <td><button class="del" value="${index}">Delete</button></td>
+                   <td style="text-align:center">${item.id}</td>
+                   <td style="text-align:center">${item.name}</td>
+                   <td style="text-align:center"><img width="150" height="150" src="${item.url}"/></td>
+                   <td style="text-align:center">R${item.price}</td>
+                   <td style="text-align:center">${item.description}</td>
+                   <td style="text-align:center"><button class="add">Edit</button></td>
+                   <td style="text-align:center"><button class="del" value="${index}">Delete</button></td>
                    </tr>
                `
    })
@@ -42,9 +42,9 @@ displayItemsAdmin()
 //Button functionality  
 //this is the function that will save the changes to the array
 function saveAndLoad(){
-    localStorage.setItem('forSale',JSON.stringify(forSale))
+    localStorage.setItem('items',JSON.stringify(items))
     //sets the array from local storage to array(items) in code
-    items = JSON.parse(localStorage.getItem('forSale'))
+    items = JSON.parse(localStorage.getItem('items'))
 }
 //Delete button functionality
 function remove(position) {
@@ -55,8 +55,8 @@ table.addEventListener('click',function (){
     if (event.target.classList.contains('del')){
         remove(event.target.value)
         // alert(event.target.value)
+        saveAndLoad()
+        displayItemsAdmin()
     }
-    saveAndLoad()
-    displayItemsAdmin()
 })
 //Edit button funtionality
