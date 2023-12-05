@@ -90,3 +90,13 @@ sortBtn.addEventListener("click", ()=>{
         </div>
         `}).join('');
     });
+if(items.length === 0){
+    forSale.innerHTML = function spinner(){
+        return`
+        <div>
+            <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        `
+}}
