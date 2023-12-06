@@ -1,3 +1,9 @@
+body{
+    background-color: rgb(85, 3, 85);
+}
+header{
+    background-color: aliceblue;
+}
 a:hover{
     text-decoration: underline;
 }
@@ -26,7 +32,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 50vh;
+    height: 90vh;
 }
 #checkout-landing{
     background-image:url(https://i.postimg.cc/bwF344VF/priscilla-du-preez-8aj1-Pl2-Ldd-M-unsplash.jpg);
@@ -36,7 +42,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 50vh;
+    height: 90vh;
 }
 #contact-landing{
     background-image:url(https://i.postimg.cc/DZ3dThr5/elizeu-dias-a-Z3qiq1e-TRk-unsplash.jpg);
@@ -46,7 +52,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 50vh;
+    height: 90vh;
 }
 #Admin-landing{
     background-image:url(https://i.postimg.cc/2y9388td/debby-ledet-j-EYia-Gwmkdk-unsplash.jpg);
@@ -56,7 +62,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 50vh;
+    height: 90vh;
 }
 #About-landing{
     background-image:url(https://i.postimg.cc/HW43TrPM/mohd-zuber-saifi-p-Fw-PM1-YI2-M-unsplash.jpg);
@@ -66,7 +72,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 50vh;
+    height: 90vh;
 }
 #landing{
     background-image:url(https://i.postimg.cc/rpKB9zDt/bogomil-mihaylov-ek-HSHvgr27k-unsplash.jpg);
@@ -76,7 +82,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 100vh;
+    height: 90vh;
 }
 .welcome{
     color: purple;
