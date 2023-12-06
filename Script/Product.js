@@ -20,14 +20,28 @@ forSale.innerHTML = items.map(function displayArray(item,index){
     </div>
     `
 }).join('')
-
+//function to display cart with no duplicates
+function updateCartItems() {
+    let updatedCart = [];
+    cartItems.forEach(item => {
+        let existingItem = updatedCart.find(updatedItem => updatedItem.name === item.name);
+        if (existingItem) {
+            existingItem.quantity += 1; // Increase quantity for duplicates
+        } else {
+            updatedCart.push({ ...item, quantity: 1 }); // Add new items with quantity 1
+        }
+    });
+    cartItems = updatedCart;
+}
+//add to cart function
 function add(index){
     purchased.push(items[index])
+    noDuplicates()
     localStorage.setItem('purchased',JSON.stringify(purchased))
 }
-
+//button asigned to add to cart function
 forSale.addEventListener('click',function (){
-    if (event.target.hasAttribute('data-add')){
+    if(event.target.hasAttribute('data-add')){
         add(event.target.value)
     }
 })
@@ -40,6 +54,20 @@ searchBtn.addEventListener("click", ()=>{
     let searchResults = items?.filter(item =>
     item.name.includes(searchFor.value));
     if (searchResults.length === 0) {
+        forSale.innerHTML = searchResults.map(function displayArray(item,index){
+            return`
+            <div class="col-md-4 my-5 d-flex justify-content-center">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="${item.url}" class="card-img-top" alt=""/>
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">${item.description}</p>
+                        <button value="${index}" class="btn btn-primary" data-add>Add to Cart</button>
+                        <p class="card-text">R${item.price}</p>
+                    </div>
+                </div>
+            </div>
+            `}).join('');
         alert('No Products were found')
     }else{
         forSale.innerHTML = searchResults.map(function displayArray(item,index){
@@ -86,10 +114,12 @@ sortBtn.addEventListener("click", ()=>{
 if(items.length === 0){
     forSale.innerHTML = function spinner(){
         return`
+        <center>
         <div>
             <div class="spinner-border text-warning" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
+        </center>
         `
 }}
