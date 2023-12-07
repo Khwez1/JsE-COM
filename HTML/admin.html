@@ -65,37 +65,58 @@
         </div>
     </section>
     <section data-Administration class="pt-2">
-        <div  tabindex="-1" style="background-color: white; border-radius: 20px;">
-            <div class="dialog">
-              <div class="content">
-                <div class="header">
-                  <h5 class="title">Modal title</h5>
-                  <button type="button" id="close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="body">
-                  <p>Modal body text goes here.</p>
-                </div>
-                <div class="footer">
-                  <button type="button" id="save" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-            </div>
+       
     </section>
     <div class="container justify-content-end pt-3">
         <div class="row justify-content-end">
             <div class="col-md-4">
-                <button id="admin-add">Add</button>
+                <button class="admin-add" onclick="displayModal()">Add</button>
             </div>
             <div class="col-md-6">
                 <button class="btn btn-outline-success" data-sortBtn>Sort by</button>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="col-md-12 col-sm-12">
+    <div class="container-fluid justify-content-center">
+        <div class="col-md-4 col-sm-12">
             <table class="table-active" data-Admin>
-                
+                <center>  
+                    <div class="modal-o" id="modal2" style="background-color: white;" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Add product</h5>
+                                    <button type="button" onclick="hideAdminModal()" class="btn-close" aria-label="Close"></button>
+                                </div>
+                                    <div class="modal-body justify-content-center">
+                                        <div class="itemId">
+                                            <label for="itemId">Item Id:</label><br>
+                                            <input type="number" id="itemId" name="itemId"><br><br>
+                                        <div>
+                                        <div class="itemName">
+                                            <label for="itemName">Item Name:</label><br>
+                                            <input type="text" id="itemName" name="itemName"><br><br>
+                                        <div>
+                                        <div class="itemDescription">
+                                            <label for="itemDescription">Item Description:</label><br>
+                                            <input type="text" id="itemDescription" name="itemDescription"><br><br>
+                                        <div>
+                                        <div class="itemPrice">
+                                            <label for="itemPrice">Item Price:</label><br>
+                                            <input type="number" id="itemPrice" name="itemPrice"><br><br>
+                                        <div>
+                                        <div class="itemUrl">
+                                            <label for="itemUrl">Item Url:</label><br>
+                                            <input type="text" id="itemUrl" name="itemUrl"><br><br>
+                                        <div>
+                                    </div><br>
+                                <div class="modal-footer">
+                                    <button type="button" id="add-obj" onclick="CreateObject()" class="btn btn-primary">Create Object</button>
+                                </div><br>
+                            </div>
+                        </div>
+                    </div>
+                    </center>
             </table>
         </div>
     </div>
