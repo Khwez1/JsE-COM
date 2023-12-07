@@ -40,9 +40,10 @@ function calculateTotalPrice(items) {
         return accumulator + currentItem.price;
     }, 0);
 
-    return answer = totalPrice;
+    return  totalPrice;
 }
-
+answer.innerHTML = calculateTotalPrice(purchased)
+console.log(answer);
 let removeFromCheckoutBtn = document.querySelector('.remove')
 table.addEventListener('click',function (){
     if (event.target.classList.contains('remove')){

@@ -50,7 +50,7 @@ function displayItemsAdmin(){
            <td style="text-align:center"><button class="del" value="${index}">Delete</button></td>
        </tr>
        `
-})
+    })
    // to make the separate array from .map one array in items
    table.innerHTML = products.join('')
 }
@@ -106,13 +106,38 @@ closeBtn.addEventListener('click',function(){
     modal.style.display = 'none'
     }
 )
-//addModal variables
-let addModal = document.querySelector('[data-administration]')
-let modalAdd = document.querySelector('#admin-add')
-let addObj = document.querySelector('#addObj')
-//hide addModal function
-function hideAddModal(){
-    addModal.style.display = 'none'
+// display the create item modal
+
+// variable for addmodal
+let adminModal = document.querySelector('#modal2')
+//display Admnmodal and
+function displayModal() {
+    adminModal.style.display = 'block'
+}
+//hideAdmnModals function
+function hideAdminModal(){
+        adminModal.style.display = 'none'
+}
+hideAdminModal()
+
+function ObjectCreater(id,name,description,price,url){
+    this.id = id,
+    this.name = name,
+    this.description = description,
+    this.price = price,
+    this.url = url
+    this.quantity = 1
+}
+function Item() {
+    let itemId = document.getElementById('itemId').value;
+    let itemName = document.getElementById('itemName').value;
+    let itemDescription = document.getElementById('itemDescription').value;
+    let itemPrice = document.getElementById('itemPrice').value;
+    let itemUrl = document.getElementById('itemUrl').value;
+
+    let newItem = new Item(itemId,itemName,itemPrice,itemDescription,itemPrice,itemUrl)
+
+    console.log(newItem)
 }
 let sortBtn = document.querySelector('[data-sortBtn]')
 //sort button function
