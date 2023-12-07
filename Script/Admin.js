@@ -104,32 +104,48 @@ function hideModal(){
 //close modal funtion
 closeBtn.addEventListener('click',function(){
     modal.style.display = 'none'
-    })
+    }
+)
+//addModal variables
+let addModal = document.querySelector('[data-administration]')
+let modalAdd = document.querySelector('#admin-add')
+let addObj = document.querySelector('#addObj')
+//hide addModal function
+function hideAddModal(){
+    addModal.style.display = 'none'
+}
+let sortBtn = document.querySelector('[data-sortBtn]')
+//sort button function
+sortBtn.addEventListener("click", () => {
+    let items = JSON.parse(localStorage.getItem("items"));
+    if (items) {
+        let sorted = items.slice().sort((a, b) => a.price - b.price);
+        let products = sorted.map(function (item, index) {
+            return `   
+        <tr>
+            <td style="text-align:center">${item.id}</td>
+            <td style="text-align:center">${item.name}</td>
+            <td style="text-align:center"><img width="150" height="150" src="${item.url}"/></td>
+            <td style="text-align:center">R${item.price}</td>
+           <td style="text-align:center">${item.description}</td>
+           <td style="text-align:center"><button class="edit" value="${index}">Edit</button></td>
+           <td style="text-align:center"><button class="del" value="${index}">Delete</button></td>
+       </tr>
+            `;
+        });
+        table.innerHTML = products.join('');
+    }
+});
 //spinner function
 if(items.length === 0){
     table.innerHTML = function spinner(){
         return`
-        <center>
-            <div>
-                <div class="spinner-border text-warning" role="status">
-                    <span class="visually-hidden">Loading...</span>
+            <center>
+                <div>
+                    <div class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                 </div>
-            </div>
-        </center>
+            </center>
         `
-    }}
-//Admin modal button
-let adminAdd = document.querySelector('#admin-add')
-//admin modal function
-
-//admin modal 
-
-//object for modal
-let object = {
-    id: 7,
-    name: 'Piano',
-    description: 'Piano is a popular instrument in the world',
-    price: 2000,
-    url: 'https://i.postimg.cc/z4z4z4z4/piano.webp'
-}
-//function for creating a new object via admin
+}}

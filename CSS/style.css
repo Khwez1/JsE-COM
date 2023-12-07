@@ -44,6 +44,11 @@ a:hover{
     align-content: center;
     height: 90vh;
 }
+td{
+    color: black;
+    font-weight: 500;
+    border: solid 1px black;
+}
 #contact-landing{
     background-image:url(https://i.postimg.cc/DZ3dThr5/elizeu-dias-a-Z3qiq1e-TRk-unsplash.jpg);
     background-size: cover;

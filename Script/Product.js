@@ -20,31 +20,37 @@ forSale.innerHTML = items.map(function displayArray(item,index){
     </div>
     `
 }).join('')
-//function to display cart with no duplicates
-function updateCartItems() {
-    let updatedCart = [];
-    cartItems.forEach(item => {
-        let existingItem = updatedCart.find(updatedItem => updatedItem.name === item.name);
-        if (existingItem) {
-            existingItem.quantity += 1; // Increase quantity for duplicates
-        } else {
-            updatedCart.push({ ...item, quantity: 1 }); // Add new items with quantity 1
-        }
-    });
-    cartItems = updatedCart;
+// Assuming you have an array 'items' containing your items
+
+function isItemInCart(item, cart) {
+    return cart.some(cartItem => cartItem.id === item.id); // compares the two items array 'id' property
 }
-//add to cart function
-function add(index){
-    purchased.push(items[index])
-    noDuplicates()
-    localStorage.setItem('purchased',JSON.stringify(purchased))
-}
-//button asigned to add to cart function
-forSale.addEventListener('click',function (){
-    if(event.target.hasAttribute('data-add')){
-        add(event.target.value)
+
+function incrementQuantity(item, cart) {
+    let cartItem = cart.find(cartItem => cartItem.id === item.id);
+    if (cartItem) {
+        cartItem.quantity += 1;
     }
-})
+}
+
+function add(index) {
+    let itemToAdd = items[index]; // Fetch the item based on the index
+
+    if (!isItemInCart(itemToAdd, purchased)) {
+        purchased.push(itemToAdd);
+    } else {
+        incrementQuantity(itemToAdd, purchased);
+    }
+
+    localStorage.setItem('purchased', JSON.stringify(purchased));
+}
+
+// Button assigned to add to cart function
+forSale.addEventListener('click', function () {
+    if (event.target.hasAttribute('data-add')) {
+        add(event.target.value);
+    }
+});
 //search button
 let searchBtn = document.querySelector('[data-searchBtn]')
 //search bar value 
