@@ -71,3 +71,14 @@ if(purchased.length === 0){
         `
     }
 }
+//checkout button
+function checkout() {
+    alert('Thank you for shopping')
+}
+//clearfunction
+function Clear(position){
+    purchased.splice(position++)
+    saveAndLoad2()
+}
+let clearbtn = document.getElementById('clear')
+clearbtn.addEventListener('click',Clear())
