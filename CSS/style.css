@@ -1,3 +1,9 @@
+button{
+    border-radius: 10%;
+    background-color: gold;
+    color: white;
+    font-weight: 500;
+}
 body{
     background-color: rgb(85, 3, 85);
 }
@@ -68,6 +74,7 @@ td{
     align-items: center;
     align-content: center;
     height: 90vh;
+    width: 100%;
 }
 #About-landing{
     background-image:url(https://i.postimg.cc/HW43TrPM/mohd-zuber-saifi-p-Fw-PM1-YI2-M-unsplash.jpg);
