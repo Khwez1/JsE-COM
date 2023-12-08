@@ -79,6 +79,7 @@ function checkout() {
 function Clear(position){
     purchased.splice(position++)
     saveAndLoad2()
+    location.reload
 }
 let clearbtn = document.getElementById('clear')
 clearbtn.addEventListener('click',Clear())
