@@ -17,27 +17,13 @@ table.innerHTML = purchased.map((item)=>{
 }).join('')
 //function for subtotal and Grandtotal values
 let price = document.querySelector('span');
-function subtotal(){
-}
-//function for spinner
-if(purchased.length === 0){
-    table.innerHTML = function spinner(){
-        return`
-        <center>
-        <div>
-            <div class="spinner-border text-warning" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-        </center>
-        `
-}}
+
 //toalt price function
 let answer = document.querySelector('#total-price')
 function calculateTotalPrice(items) {
     // Using reduce to accumulate the total price
-    const totalPrice = items.reduce((accumulator, currentItem) => {
-        return accumulator + currentItem.price;
+    let totalPrice = items.reduce((zero, currentItem) => {
+        return zero + currentItem.price;
     }, 0);
 
     return  totalPrice;
@@ -57,7 +43,7 @@ table.addEventListener('click',function (){
                 <td>${item.name}</td>
                 <td>${item.description}</td>
                 <td>R${item.price}</td>
-                <td><button value=${index} id="remove">remove</button></td>
+                <td><button value=${index} id="remove"><i class="fa-sharp fa-solid fa-trash-xmark"></i></button></button></td>
             </tr>
             `
         }).join('')
@@ -70,4 +56,18 @@ function saveAndLoad2(){
 }
 function remove(position) {
     purchased.splice(position,1)
+}
+//function for spinner
+if(purchased.length === 0){
+    table.innerHTML = function spinner(){
+    return`
+        <center>
+            <div>
+                <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </center>
+        `
+    }
 }

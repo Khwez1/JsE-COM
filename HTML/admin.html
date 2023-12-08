@@ -57,15 +57,11 @@
             <div class="row">
                 <!-- landing content -->
                 <div class="col-sm-12 col-md-12 text-end" id="landing-content">
-                    <h2 class="welcome">Welcome</h2>
-                    <h1 id="Headline">Discover our New Collection</h1>
-                    <hr><h5 id="description">An aspiring Full Stack developer</h5>
+                    <h1 id="Headline">Admin</h1>
+                    <h5 style="color: gold;">Home > Admin</h5>
                 </div>
             </div>
         </div>
-    </section>
-    <section data-Administration class="pt-2">
-       
     </section>
     <div class="container justify-content-end pt-3">
         <div class="row justify-content-end">
@@ -73,14 +69,14 @@
                 <button class="admin-add" onclick="displayModal()">Add</button>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-outline-success" data-sortBtn>Sort by</button>
+                <button data-sortBtn>Sort</button>
             </div>
         </div>
     </div>
-    <div class="container-fluid justify-content-center">
-        <div class="col-md-4 col-sm-12">
-            <table class="table-active" data-Admin>
-                <center>  
+    <center>  
+        <div class="container-fluid justify-content-center">
+            <div class="col-md-4 col-sm-12">
+                <table class="table-active table m-1" data-Admin>
                     <div class="modal-o" id="modal2" style="background-color: white;" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -89,26 +85,22 @@
                                     <button type="button" onclick="hideAdminModal()" class="btn-close" aria-label="Close"></button>
                                 </div>
                                     <div class="modal-body justify-content-center">
-                                        <div class="itemId">
-                                            <label for="itemId">Item Id:</label><br>
-                                            <input type="number" id="itemId" name="itemId"><br><br>
-                                        <div>
                                         <div class="itemName">
                                             <label for="itemName">Item Name:</label><br>
                                             <input type="text" id="itemName" name="itemName"><br><br>
-                                        <div>
-                                        <div class="itemDescription">
-                                            <label for="itemDescription">Item Description:</label><br>
-                                            <input type="text" id="itemDescription" name="itemDescription"><br><br>
-                                        <div>
+                                        </div>
                                         <div class="itemPrice">
                                             <label for="itemPrice">Item Price:</label><br>
                                             <input type="number" id="itemPrice" name="itemPrice"><br><br>
-                                        <div>
+                                        </div>
+                                        <div class="itemDescription">
+                                            <label for="itemDescription">Item Description:</label><br>
+                                            <input type="text" id="itemDescription" name="itemDescription"><br><br>
+                                        </div>
                                         <div class="itemUrl">
                                             <label for="itemUrl">Item Url:</label><br>
                                             <input type="text" id="itemUrl" name="itemUrl"><br><br>
-                                        <div>
+                                        </div>
                                     </div><br>
                                 <div class="modal-footer">
                                     <button type="button" id="add-obj" onclick="CreateObject()" class="btn btn-primary">Create Object</button>
@@ -116,14 +108,14 @@
                             </div>
                         </div>
                     </div>
-                    </center>
-            </table>
+                </table>
+            </div>
         </div>
-    </div>
+    </center>
     </main>
     <footer>
         <!-- Company name; year and copyright -->
-        <p>2023 Reverb.All rights reseverd</p>
+        <p style="color: black;">2023 Reverb.All rights reseverd</p>
     </footer>
     <script src="/Script/Admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
